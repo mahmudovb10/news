@@ -1,2 +1,8 @@
 @import "tailwindcss";
 @plugin "daisyui";
+
+.newsImg {
+  width: 35rem;
+  object-fit: cover;
+  border-radius: 12px;
+}
