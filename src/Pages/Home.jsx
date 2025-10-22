@@ -13,9 +13,9 @@ function Home() {
     <div>
       <h1>News</h1>
       <ul>
-        {news.articles.map((index, element) => (
-          <div key={element}>
-            <h1>{index.title}</h1>
+        {news.articles.map((article, index) => (
+          <div key={index}>
+            <h1>{article.title}</h1>
           </div>
         ))}
       </ul>

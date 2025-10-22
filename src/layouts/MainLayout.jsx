@@ -1,4 +1,6 @@
-const MainLayout = ({ children }) => {
+import { Outlet } from "react-router-dom";
+
+const MainLayout = () => {
   return (
     <div>
       {/* Header */}
@@ -7,7 +9,9 @@ const MainLayout = ({ children }) => {
       </header>
 
       {/* Main Content */}
-      <main>{children}</main>
+      <main>
+        <Outlet />
+      </main>
 
       {/* Footer */}
       <footer>
