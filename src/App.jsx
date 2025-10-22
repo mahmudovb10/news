@@ -1,26 +1,26 @@
-import { useFetch } from "./hooks/useFetch";
+import MainLayout from "./layouts/MainLayout";
+import Home from "./Pages/Home";
+import Profile from "./Pages/Profile";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 function App() {
-  const {
-    data: news,
-    isPending,
-    error,
-  } = useFetch(
-    "https://newsapi.org/v2/top-headlines?country=us&apiKey=314795ca3baa452eba768e76912b4584"
-  );
-  if (isPending) return <p>Loading...</p>;
-  return (
-    <div>
-      <h1>News</h1>
-      <ul>
-        {news.articles.map((index, element) => (
-          <div key={element}>
-            <h1>{index.title}</h1>
-          </div>
-        ))}
-      </ul>
-    </div>
-  );
+  const router = createBrowserRouter([
+    {
+      path: "/",
+      element: <MainLayout />,
+      children: [
+        {
+          index: true,
+          element: <Home />,
+        },
+        {
+          path: "/profile",
+          element: <Profile />,
+        },
+      ],
+    },
+  ]);
+  return <RouterProvider router={router} />;
 }
 
 export default App;
