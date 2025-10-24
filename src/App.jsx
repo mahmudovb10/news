@@ -1,3 +1,4 @@
+import SingleNews from "./components/SingleNews";
 import MainLayout from "./layouts/MainLayout";
 import Home from "./Pages/Home";
 import Profile from "./Pages/Profile";
@@ -16,6 +17,10 @@ function App() {
         {
           path: "/profile",
           element: <Profile />,
+        },
+        {
+          path: "/singlenews/",
+          element: <SingleNews />,
         },
       ],
     },

@@ -1,4 +1,5 @@
 import { useFetch } from "../hooks/useFetch";
+import { Link } from "react-router-dom";
 
 function Home() {
   const {
@@ -12,14 +13,14 @@ function Home() {
   return (
     <div>
       <h1>News</h1>
-      <ul>
+      <div className="newsContainer">
         {news.articles.map((article, index) => (
-          <div key={index}>
-            <h1>{article.title}</h1>
+          <div key={index} className="newsItem">
             <img className="newsImg" src={article.urlToImage} alt="" />
+            <h1>{article.title}</h1>
           </div>
         ))}
-      </ul>
+      </div>
     </div>
   );
 }

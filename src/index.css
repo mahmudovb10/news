@@ -1,3 +1,4 @@
+/* index.css */
 @import "tailwindcss";
 @plugin "daisyui";
 
@@ -5,4 +6,21 @@
   width: 35rem;
   object-fit: cover;
   border-radius: 12px;
+}
+
+/* prodContainer ni newsContainer ga o'zgartirdik va uni 2 ustunli qildik */
+.newsContainer {
+  display: grid;
+  /* 2 ustunli grid */
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px; /* ustunlar va qatorlar orasidagi masofa */
+  padding: 16px; /* ichki bo'shliq */
+}
+
+/* Har bir yangilik elementi uchun yangi class */
+.newsItem {
+  /* yangilik rasmi va sarlavhasini yonma-yon qo'yish uchun kerak bo'lsa */
+  display: flex;
+  flex-direction: column; /* elementlarni vertikal joylashtirish */
+  gap: 8px;
 }
